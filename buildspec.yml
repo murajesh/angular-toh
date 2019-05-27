@@ -22,3 +22,6 @@ phases:
     commands:
       - echo Entered the post_build phase...
       #- aws s3 sync ./dist/angular-devops s3://angular-devops-production --acl 'public-read' --delete
+cache:
+  paths:
+    - 'node_modules/**/*'
