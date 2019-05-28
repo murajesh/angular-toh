@@ -7,20 +7,20 @@ phases:
     commands:
       - echo $(pwd)
       # Update libs
-      #- apt-get update
+      - apt-get update
       # Headless Chrome
-      #- apt-get install -y fonts-liberation libasound2 libnspr4 libnss3 libx11-xcb1 xdg-utils libxss1 libappindicator1 libindicator7
+      - apt-get install -y fonts-liberation libasound2 libnspr4 libnss3 libx11-xcb1 xdg-utils libxss1 libappindicator1 libindicator7
       #- mkdir "${CODEBUILD_SRC_DIR}/cache"
-      #- wget -O "${CODEBUILD_SRC_DIR}/cache/google-chrome-stable_current_amd64.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      #- dpkg -i "${CODEBUILD_SRC_DIR}/cache/google-chrome*.deb"
+      - wget -O "${CODEBUILD_SRC_DIR}/google-chrome-stable_current_amd64.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      - dpkg -i "${CODEBUILD_SRC_DIR}/google-chrome*.deb"
       #- find . -iname "google-chrome-stable_current_amd64.deb" -type f
   pre_build:
     commands:
       #- npm install
-      #- npm ci
+      - npm ci
   build:
     commands:
-      #- npm run build-prod
+      - npm run build-prod
       #- npm run test:ci
   post_build:
     commands:
@@ -30,4 +30,4 @@ cache:
   paths:
     #- 'node_modules/**/*'
     #- '"${CODEBUILD_SRC_DIR}"/.npm/**/*'
-    #- '"${CODEBUILD_SRC_DIR}"/cache'
+    - '"${CODEBUILD_SRC_DIR}/*""'
