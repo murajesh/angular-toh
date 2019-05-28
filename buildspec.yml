@@ -13,7 +13,8 @@ phases:
       - dpkg -i google-chrome*.deb
   pre_build:
     commands:
-      - npm install
+      #- npm install
+      - npm ci
   build:
     commands:
       - npm run build-prod
@@ -24,4 +25,5 @@ phases:
       #- aws s3 sync ./dist/angular-devops s3://angular-devops-production --acl 'public-read' --delete
 cache:
   paths:
-    - 'node_modules/**/*'
+    #- 'node_modules/**/*'
+    #- '${CODEBUILD_SRC_DIR}/.npm/**/*'
