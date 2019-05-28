@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 10      
     commands:
-      - echo pwd
+      - echo $(pwd)
       # Update libs
       #- apt-get update
       # Headless Chrome
