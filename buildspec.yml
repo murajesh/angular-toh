@@ -25,5 +25,5 @@ phases:
       #- aws s3 sync ./dist/angular-devops s3://angular-devops-production --acl 'public-read' --delete
 cache:
   paths:
-    #- 'node_modules/**/*'
-    #- '${CODEBUILD_SRC_DIR}/.npm/**/*'
+    - 'node_modules/**/*'
+    - '${CODEBUILD_SRC_DIR}/.npm/**/*'
