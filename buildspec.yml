@@ -30,4 +30,4 @@ cache:
   paths:
     #- 'node_modules/**/*'
     #- '"${CODEBUILD_SRC_DIR}"/.npm/**/*'
-    - '"${CODEBUILD_SRC_DIR}/*""'
+    - './*'
